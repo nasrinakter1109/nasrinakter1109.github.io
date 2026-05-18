@@ -1,74 +1,52 @@
 import Image from "next/image";
 
-const skills = [
-  "ASP.NET Core",
-  "C#",
-  "Node.js",
-  "NestJS",
-  "Angular",
-  "TypeScript",
-  "JavaScript",
-  "Blazor",
-  "React",
-  "Next.js",
-  "SQL Server",
-  "PostgreSQL",
-  "MongoDB",
-  "Redis",
-  "Kafka",
-  "Docker",
-  "Entity Framework",
-  "Prisma ORM",
-  "REST API",
-  "Microservices",
-  "Crystal Reports",
+const skillGroups = [
+  {
+    title: "Backend",
+    items: ["ASP.NET Core", "C#", "Node.js", "NestJS", "REST API", "Microservices"],
+  },
+  {
+    title: "Frontend",
+    items: ["Angular", "TypeScript", "JavaScript", "React", "Next.js", "Blazor"],
+  },
+  {
+    title: "Data & Infra",
+    items: ["SQL Server", "PostgreSQL", "MongoDB", "Redis", "Kafka", "Docker"],
+  },
 ];
 
 const highlights = [
-  {
-    value: "6+",
-    label: "Years of experience",
-  },
-  {
-    value: "10+",
-    label: "Enterprise projects delivered",
-  },
-  {
-    value: "3",
-    label: "Companies across career path",
-  },
+  { value: "6+", label: "Years of experience" },
+  { value: "10+", label: "Enterprise projects delivered" },
+  { value: "3", label: "Companies across career path" },
 ];
 
-const focusAreas = [
-  "Enterprise Platforms",
-  "Payment Systems",
-  "Microservices",
-  "ERP Workflows",
-];
-
-const projects = [
+const featuredProjects = [
   {
     title: "Payget Crypto Payment Gateway",
+    role: "Software Engineer, SOFTIC",
     summary:
-      "Developed a cryptocurrency payment gateway at SOFTIC with unified provider integrations, secure transaction handling, and real-time merchant notifications.",
+      "Built secure payment initiation, callback handling, provider abstraction, and real-time notifications for cryptocurrency transactions.",
     impact:
-      "Improved payment reliability through callback validation, reconciliation, and configurable SMS and email alerts.",
+      "Strengthened payment reliability through reconciliation, validation, and configurable merchant alerts.",
     stack: ["NestJS", "PostgreSQL", "Redis", "Docker"],
   },
   {
     title: "Invoice and Billing Management System",
+    role: "Software Engineer, SOFTIC",
     summary:
-      "Built a billing and invoicing platform with customer management, invoice generation, payment tracking, and role-based access control.",
+      "Developed a billing platform for customer management, invoice generation, payment tracking, and role-based access control.",
     impact:
-      "Delivered performant reporting, filtering, pagination, and maintainable API architecture for business use.",
+      "Delivered performant reporting, filtering, search, and maintainable API architecture for business operations.",
     stack: ["ASP.NET Core Web API", "Angular 16", "SQL Server", "JWT"],
   },
   {
     title: "Support Chat Platform",
+    role: "Software Engineer, SOFTIC",
     summary:
-      "Developed a multi-tenant chatbot and support system for Telegram, WhatsApp, and Facebook Messenger with real-time communication.",
+      "Created a multi-tenant chatbot and support system for Telegram, WhatsApp, and Facebook Messenger with real-time agent communication.",
     impact:
-      "Reduced manual support workload with automated workflows and scalable backend services for concurrent user interactions.",
+      "Reduced manual support load through automated workflows and scalable concurrent messaging services.",
     stack: ["ExpressJS", "MongoDB", "Socket.IO", "Redis"],
   },
 ];
@@ -78,58 +56,45 @@ const moreProjects = [
     title: "Confidential Microservice Platform",
     company: "SOFTIC",
     summary:
-      "Worked on a confidential microservice-based platform with auth, payment, transaction, rewards, and notification services.",
-    stack: ["NestJS", "Kafka", "PostgreSQL", "Prisma ORM", "Docker", "Elasticsearch"],
+      "Worked on auth, payment, transaction, rewards, and notification services in a microservice architecture.",
   },
   {
     title: "Accounting System",
     company: "Zaynax Limited",
     summary:
-      "Designed core accounting modules including ledgers, subledgers, fiscal year logic, transactional consistency, and financial reports.",
-    stack: ["ASP.NET Core Blazor", "SQL Server", "Entity Framework", "Crystal Reports"],
+      "Designed ledgers, subledgers, fiscal year logic, transactional consistency, and financial reports.",
   },
   {
     title: "ZHealth",
     company: "Zaynax Limited",
     summary:
-      "Contributed to a health-tech platform with product, order, payment, and communication services including chat and video call features.",
-    stack: ["NestJS", "Redis", "MongoDB", "Docker", "Bkash", "Nagad"],
+      "Contributed to product, order, payment, and communication services including chat and video call capabilities.",
   },
   {
     title: "Zdrop",
     company: "Zaynax Limited",
     summary:
-      "Worked on an e-commerce and logistics-oriented platform with product, order, payment gateway integration, and notification services.",
-    stack: ["NestJS", "Redis", "NATS", "MongoDB", "Docker"],
+      "Worked on an e-commerce and logistics platform with order flow, payment integration, and notifications.",
   },
   {
     title: "ERP Solution",
     company: "Zaynax Limited",
     summary:
-      "Built ERP-focused backend modules covering accounting, HR, and invoicing workflows for business operations.",
-    stack: ["ASP.NET Core Web API", "SQL Server", "ERP Modules"],
+      "Built accounting, HR, and invoicing workflows for business operations using .NET and SQL Server.",
   },
   {
     title: "Human Resource Management",
     company: "Software Arena Ltd",
     summary:
-      "Developed payroll-related modules such as salary, allowance, deduction, and dynamic payroll calculation with API support.",
-    stack: ["Angular 6", "ASP.NET Core Web API", "SQL Server"],
-  },
-  {
-    title: "ERP Solution",
-    company: "Software Arena Ltd",
-    summary:
-      "Worked on accounting, sales and purchase, payroll, HR, and marketing modules with business reporting and complex SQL queries.",
-    stack: ["Angular 6", "ASP.NET Core Web API", "SQL", "Crystal Reports"],
+      "Developed payroll, allowance, deduction, and dynamic salary calculation modules with API support.",
   },
 ];
 
 const experience = [
   "Built enterprise-grade web applications using C#, .NET, Node.js, and modern JavaScript frameworks in fast-paced product teams.",
   "Designed and implemented RESTful APIs, microservices, database schemas, and secure business workflows across payment, health-tech, ERP, and HR systems.",
-  "Worked with SQL Server, PostgreSQL, MongoDB, Redis, Kafka, RabbitMQ, and NATS to support scalable and high-performance application behavior.",
-  "Applied SOLID principles, clean architecture, unit-testing mindset, and CI/CD-friendly development practices to keep code maintainable and reliable.",
+  "Worked with SQL Server, PostgreSQL, MongoDB, Redis, Kafka, RabbitMQ, and NATS to support scalable and high-performance systems.",
+  "Applied SOLID principles, clean architecture, and CI/CD-friendly practices to keep code maintainable and reliable.",
 ];
 
 const roles = [
@@ -158,205 +123,186 @@ const roles = [
 
 export default function Home() {
   return (
-    <main className="page-shell">
-      <nav className="top-nav" aria-label="Primary">
-        <a className="brand-mark" href="#top">
-          Nasrin Akter
-        </a>
-        <div className="nav-links">
-          <a href="#experience">Experience</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </nav>
-
-      <section className="top-ribbon">
-        <p>Software Engineer focused on enterprise applications, backend APIs, and scalable business systems.</p>
-      </section>
-
-      <section className="hero" id="top">
-        <div className="hero-copy">
-          <p className="eyebrow">Available for Software Engineering Opportunities</p>
-          <h1>Nasrin Akter</h1>
-          <p className="hero-kicker">
-            Backend and full-stack engineer delivering clean architecture, secure APIs, and production-ready business platforms.
-          </p>
-          <p className="hero-lead">
-            Software Engineer with 6+ years of experience building enterprise-grade web applications using ASP.NET Core,
-            Node.js, NestJS, Angular, SQL, and microservice architecture across payment, ERP, HRM, chat, and health-tech domains.
-          </p>
-          <div className="focus-row">
-            {focusAreas.map((area) => (
-              <span key={area}>{area}</span>
-            ))}
-          </div>
-          <div className="hero-actions">
-            <a className="primary-btn" href="/resume">
-              View Resume
-            </a>
-            <a className="secondary-btn" href="#projects">
-              View Projects
-            </a>
-          </div>
-          <div className="hero-meta">
-            <span>Dhaka, Bangladesh</span>
-            <span>Open to full-time roles</span>
-            <span>Backend and full-stack focus</span>
-          </div>
-        </div>
-
-        <aside className="hero-card">
-          <div className="profile-photo-wrap">
+    <main className="cv-shell">
+      <aside className="cv-sidebar">
+        <div className="sidebar-stripe" />
+        <div className="sidebar-inner">
+          <div className="portrait-frame">
             <Image
               src="/nasrin-akter.png"
               alt="Portrait of Nasrin Akter"
-              width={320}
-              height={320}
-              className="profile-photo"
+              width={220}
+              height={220}
+              className="portrait-image"
               priority
             />
           </div>
-          <p className="card-label">Profile Snapshot</p>
-          <ul>
-            <li>6+ years of professional experience</li>
-            <li>Strong background in .NET, NestJS, Angular, and SQL</li>
-            <li>Hands-on work in payment, ERP, HRM, health-tech, and chat systems</li>
-            <li>Experienced with microservices, Redis, Kafka, Docker, and CI/CD-friendly delivery</li>
-          </ul>
-        </aside>
-      </section>
 
-      <section className="stats-grid" aria-label="Experience highlights">
-        {highlights.map((item) => (
-          <article className="stat-card" key={item.label}>
-            <strong>{item.value}</strong>
-            <span>{item.label}</span>
-          </article>
-        ))}
-      </section>
+          <div className="identity-block">
+            <h1>Nasrin Akter</h1>
+            <p>Software Engineer</p>
+          </div>
 
-      <section className="section-divider" aria-hidden="true">
-        <span />
-      </section>
+          <section className="sidebar-section">
+            <h2>Profile</h2>
+            <p>
+              Backend and full-stack engineer with 6+ years of experience building enterprise applications,
+              APIs, payment systems, and scalable business workflows.
+            </p>
+          </section>
 
-      <section className="content-grid">
-        <article className="panel">
-          <p className="section-tag">About</p>
-          <h2>Professional Summary</h2>
-          <p>
-            Dedicated Software Engineer with over 6 years of experience in
-            designing, developing, and deploying enterprise-grade web
-            applications. I have strong experience in ASP.NET Core Web API,
-            Entity Framework, NestJS microservices, RESTful API design, and
-            relational and NoSQL databases. My focus is on clean code,
-            performance, security, and building scalable solutions that solve
-            real business problems.
-          </p>
-        </article>
+          <section className="sidebar-section">
+            <h2>Core Focus</h2>
+            <div className="focus-list">
+              <span>Enterprise Platforms</span>
+              <span>Payment Systems</span>
+              <span>Microservices</span>
+              <span>ERP Workflows</span>
+            </div>
+          </section>
 
-        <article className="panel">
-          <p className="section-tag">Skills</p>
-          <h2>Core Technologies</h2>
-          <div className="skill-cloud">
-            {skills.map((skill) => (
-              <span key={skill}>{skill}</span>
+          <section className="sidebar-section">
+            <h2>Skills</h2>
+            <div className="skill-meter-list">
+              {skillGroups.map((group) => (
+                <div key={group.title} className="skill-meter-group">
+                  <p>{group.title}</p>
+                  {group.items.map((item, index) => (
+                    <div key={item} className="skill-meter-row">
+                      <span>{item}</span>
+                      <div className="meter-track">
+                        <div
+                          className="meter-fill"
+                          style={{ width: `${92 - index * 7}%` }}
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className="sidebar-section">
+            <h2>Contact</h2>
+            <div className="sidebar-contact">
+              <a href="mailto:nasrinakter1109@gmail.com">nasrinakter1109@gmail.com</a>
+              <a href="tel:+8801929298674">+880 1929-298674</a>
+              <a href="https://maps.google.com/?q=Shantibagh,Dhaka-1217" target="_blank" rel="noreferrer">
+                Shantibagh, Dhaka-1217
+              </a>
+              <a href="/resume">View Resume</a>
+            </div>
+          </section>
+        </div>
+      </aside>
+
+      <section className="cv-main">
+        <div className="main-banner" />
+
+        <header className="main-header">
+          <div>
+            <p className="eyebrow">Available for Software Engineering Opportunities</p>
+            <h2>Building reliable backend systems and business platforms with clean architecture.</h2>
+          </div>
+          <div className="header-actions">
+            <a className="primary-btn" href="/resume">
+              View Resume
+            </a>
+            <a className="secondary-btn" href="mailto:nasrinakter1109@gmail.com">
+              Invite Me to Interview
+            </a>
+          </div>
+        </header>
+
+        <section className="summary-card">
+          <div>
+            <p className="section-tag">Summary</p>
+            <p className="summary-copy">
+              Dedicated Software Engineer with strong experience in ASP.NET Core Web API, Entity Framework, NestJS microservices,
+              RESTful API design, and relational and NoSQL databases. Focused on secure, maintainable, and scalable solutions that solve real business problems.
+            </p>
+          </div>
+          <div className="highlight-strip">
+            {highlights.map((item) => (
+              <article key={item.label} className="highlight-box">
+                <strong>{item.value}</strong>
+                <span>{item.label}</span>
+              </article>
             ))}
           </div>
-        </article>
-      </section>
+        </section>
 
-      <section className="panel wide-panel" id="experience">
-        <p className="section-tag">Experience</p>
-        <h2>What I Bring</h2>
-        <div className="bullet-grid">
-          {experience.map((item) => (
-            <div className="bullet-card" key={item}>
-              <span className="bullet-dot" />
-              <p>{item}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+        <section className="main-section">
+          <p className="section-tag">What I Bring</p>
+          <div className="statement-list">
+            {experience.map((item) => (
+              <article key={item} className="statement-card">
+                <span className="statement-dot" />
+                <p>{item}</p>
+              </article>
+            ))}
+          </div>
+        </section>
 
-      <section className="panel wide-panel">
-        <p className="section-tag">Career Path</p>
-        <h2>Professional Experience</h2>
-        <div className="project-grid">
-          {roles.map((role) => (
-            <article className="project-card" key={`${role.company}-${role.period}`}>
-              <h3>{role.title}</h3>
-              <p className="impact">{role.company}</p>
-              <p>{role.period}</p>
-              <p>{role.details}</p>
-            </article>
-          ))}
-        </div>
-      </section>
+        <section className="main-section">
+          <p className="section-tag">Professional Experience</p>
+          <div className="timeline-list">
+            {roles.map((role) => (
+              <article className="timeline-item" key={`${role.company}-${role.period}`}>
+                <div className="timeline-meta">
+                  <p>{role.period}</p>
+                </div>
+                <div className="timeline-body">
+                  <h3>{role.title}</h3>
+                  <h4>{role.company}</h4>
+                  <p>{role.details}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
 
-      <section className="panel wide-panel" id="projects">
-        <p className="section-tag">Featured Projects</p>
-        <h2>Selected Work That Reflects My Strongest Delivery</h2>
-        <div className="project-grid">
-          {projects.map((project) => (
-            <article className="project-card" key={project.title}>
-              <h3>{project.title}</h3>
-              <p>{project.summary}</p>
-              <p className="impact">{project.impact}</p>
-              <div className="stack-row">
-                {project.stack.map((item) => (
-                  <span key={item}>{item}</span>
-                ))}
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
+        <section className="main-section">
+          <p className="section-tag">Featured Projects</p>
+          <div className="feature-project-list">
+            {featuredProjects.map((project) => (
+              <article className="feature-project-card" key={project.title}>
+                <div className="feature-project-head">
+                  <div>
+                    <h3>{project.title}</h3>
+                    <p className="project-role">{project.role}</p>
+                  </div>
+                </div>
+                <p>{project.summary}</p>
+                <p className="project-impact">{project.impact}</p>
+                <div className="stack-row">
+                  {project.stack.map((item) => (
+                    <span key={item}>{item}</span>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
 
-      <section className="panel wide-panel">
-        <p className="section-tag">More Projects</p>
-        <h2>Additional Professional Work Across Multiple Domains</h2>
-        <div className="more-projects-grid">
-          {moreProjects.map((project) => (
-            <article className="mini-project-card" key={`${project.company}-${project.title}`}>
-              <p className="mini-project-company">{project.company}</p>
-              <h3>{project.title}</h3>
-              <p>{project.summary}</p>
-              <div className="stack-row">
-                {project.stack.map((item) => (
-                  <span key={`${project.title}-${item}`}>{item}</span>
-                ))}
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
+        <section className="main-section">
+          <p className="section-tag">Additional Projects</p>
+          <div className="compact-project-list">
+            {moreProjects.map((project) => (
+              <article className="compact-project-card" key={`${project.company}-${project.title}`}>
+                <p className="compact-company">{project.company}</p>
+                <h3>{project.title}</h3>
+                <p>{project.summary}</p>
+              </article>
+            ))}
+          </div>
+        </section>
 
-      <section className="panel contact-panel" id="contact">
-        <p className="section-tag">Contact</p>
-        <h2>Let&apos;s Connect</h2>
-        <p>
-          I am open to software engineering opportunities and would be glad to discuss how my backend and full-stack experience can help your team build reliable products faster.
-        </p>
-        <div className="contact-list">
-          <a href="mailto:nasrinakter1109@gmail.com">nasrinakter1109@gmail.com</a>
-          <a href="tel:+8801929298674">+880 1929-298674</a>
-          <a href="https://maps.google.com/?q=Shantibagh,Dhaka-1217" target="_blank" rel="noreferrer">
-            Shantibagh, Dhaka-1217
-          </a>
-          <a href="/Nasrin_Akter_Resume.pdf" target="_blank" rel="noreferrer">
-            Download CV
-          </a>
-        </div>
-        <div className="contact-cta">
-          <a className="primary-btn" href="mailto:nasrinakter1109@gmail.com">
-            Invite Me to Interview
-          </a>
-        </div>
+        <footer className="main-footer">
+          <p>Open to software engineering roles focused on backend systems, enterprise platforms, and product development.</p>
+        </footer>
       </section>
-
-      <footer className="footer-note">
-        <p>Open to software engineering roles focused on backend systems, enterprise platforms, and product development.</p>
-      </footer>
     </main>
   );
 }
