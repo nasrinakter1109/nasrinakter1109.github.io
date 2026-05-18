@@ -39,6 +39,13 @@ const highlights = [
   },
 ];
 
+const focusAreas = [
+  "Enterprise Platforms",
+  "Payment Systems",
+  "Microservices",
+  "ERP Workflows",
+];
+
 const projects = [
   {
     title: "Payget Crypto Payment Gateway",
@@ -63,6 +70,58 @@ const projects = [
     impact:
       "Reduced manual support workload with automated workflows and scalable backend services for concurrent user interactions.",
     stack: ["ExpressJS", "MongoDB", "Socket.IO", "Redis"],
+  },
+];
+
+const moreProjects = [
+  {
+    title: "Confidential Microservice Platform",
+    company: "SOFTIC",
+    summary:
+      "Worked on a confidential microservice-based platform with auth, payment, transaction, rewards, and notification services.",
+    stack: ["NestJS", "Kafka", "PostgreSQL", "Prisma ORM", "Docker", "Elasticsearch"],
+  },
+  {
+    title: "Accounting System",
+    company: "Zaynax Limited",
+    summary:
+      "Designed core accounting modules including ledgers, subledgers, fiscal year logic, transactional consistency, and financial reports.",
+    stack: ["ASP.NET Core Blazor", "SQL Server", "Entity Framework", "Crystal Reports"],
+  },
+  {
+    title: "ZHealth",
+    company: "Zaynax Limited",
+    summary:
+      "Contributed to a health-tech platform with product, order, payment, and communication services including chat and video call features.",
+    stack: ["NestJS", "Redis", "MongoDB", "Docker", "Bkash", "Nagad"],
+  },
+  {
+    title: "Zdrop",
+    company: "Zaynax Limited",
+    summary:
+      "Worked on an e-commerce and logistics-oriented platform with product, order, payment gateway integration, and notification services.",
+    stack: ["NestJS", "Redis", "NATS", "MongoDB", "Docker"],
+  },
+  {
+    title: "ERP Solution",
+    company: "Zaynax Limited",
+    summary:
+      "Built ERP-focused backend modules covering accounting, HR, and invoicing workflows for business operations.",
+    stack: ["ASP.NET Core Web API", "SQL Server", "ERP Modules"],
+  },
+  {
+    title: "Human Resource Management",
+    company: "Software Arena Ltd",
+    summary:
+      "Developed payroll-related modules such as salary, allowance, deduction, and dynamic payroll calculation with API support.",
+    stack: ["Angular 6", "ASP.NET Core Web API", "SQL Server"],
+  },
+  {
+    title: "ERP Solution",
+    company: "Software Arena Ltd",
+    summary:
+      "Worked on accounting, sales and purchase, payroll, HR, and marketing modules with business reporting and complex SQL queries.",
+    stack: ["Angular 6", "ASP.NET Core Web API", "SQL", "Crystal Reports"],
   },
 ];
 
@@ -100,22 +159,49 @@ const roles = [
 export default function Home() {
   return (
     <main className="page-shell">
-      <section className="hero">
+      <nav className="top-nav" aria-label="Primary">
+        <a className="brand-mark" href="#top">
+          Nasrin Akter
+        </a>
+        <div className="nav-links">
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+
+      <section className="top-ribbon">
+        <p>Software Engineer focused on enterprise applications, backend APIs, and scalable business systems.</p>
+      </section>
+
+      <section className="hero" id="top">
         <div className="hero-copy">
           <p className="eyebrow">Available for Software Engineering Opportunities</p>
           <h1>Nasrin Akter</h1>
-          <p className="hero-lead">
-            Software Engineer with 6+ years of experience building
-            enterprise-grade web applications using ASP.NET Core, Node.js,
-            NestJS, Angular, SQL, and microservice architecture.
+          <p className="hero-kicker">
+            Backend and full-stack engineer delivering clean architecture, secure APIs, and production-ready business platforms.
           </p>
+          <p className="hero-lead">
+            Software Engineer with 6+ years of experience building enterprise-grade web applications using ASP.NET Core,
+            Node.js, NestJS, Angular, SQL, and microservice architecture across payment, ERP, HRM, chat, and health-tech domains.
+          </p>
+          <div className="focus-row">
+            {focusAreas.map((area) => (
+              <span key={area}>{area}</span>
+            ))}
+          </div>
           <div className="hero-actions">
-            <a className="primary-btn" href="/Nasrin_Akter_Resume.pdf" target="_blank" rel="noreferrer">
+            <a className="primary-btn" href="/resume">
               View Resume
             </a>
-            <a className="secondary-btn" href="#contact">
-              Contact Me
+            <a className="secondary-btn" href="#projects">
+              View Projects
             </a>
+          </div>
+          <div className="hero-meta">
+            <span>Dhaka, Bangladesh</span>
+            <span>Open to full-time roles</span>
+            <span>Backend and full-stack focus</span>
           </div>
         </div>
 
@@ -149,6 +235,10 @@ export default function Home() {
         ))}
       </section>
 
+      <section className="section-divider" aria-hidden="true">
+        <span />
+      </section>
+
       <section className="content-grid">
         <article className="panel">
           <p className="section-tag">About</p>
@@ -175,7 +265,7 @@ export default function Home() {
         </article>
       </section>
 
-      <section className="panel wide-panel">
+      <section className="panel wide-panel" id="experience">
         <p className="section-tag">Experience</p>
         <h2>What I Bring</h2>
         <div className="bullet-grid">
@@ -203,9 +293,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="panel wide-panel">
-        <p className="section-tag">Selected Work</p>
-        <h2>Portfolio Highlights</h2>
+      <section className="panel wide-panel" id="projects">
+        <p className="section-tag">Featured Projects</p>
+        <h2>Selected Work That Reflects My Strongest Delivery</h2>
         <div className="project-grid">
           {projects.map((project) => (
             <article className="project-card" key={project.title}>
@@ -222,13 +312,30 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="panel wide-panel">
+        <p className="section-tag">More Projects</p>
+        <h2>Additional Professional Work Across Multiple Domains</h2>
+        <div className="more-projects-grid">
+          {moreProjects.map((project) => (
+            <article className="mini-project-card" key={`${project.company}-${project.title}`}>
+              <p className="mini-project-company">{project.company}</p>
+              <h3>{project.title}</h3>
+              <p>{project.summary}</p>
+              <div className="stack-row">
+                {project.stack.map((item) => (
+                  <span key={`${project.title}-${item}`}>{item}</span>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
       <section className="panel contact-panel" id="contact">
         <p className="section-tag">Contact</p>
         <h2>Let&apos;s Connect</h2>
         <p>
-          I am open to software engineering opportunities and would be happy to
-          discuss how my backend and full-stack experience can support your
-          team.
+          I am open to software engineering opportunities and would be glad to discuss how my backend and full-stack experience can help your team build reliable products faster.
         </p>
         <div className="contact-list">
           <a href="mailto:nasrinakter1109@gmail.com">nasrinakter1109@gmail.com</a>
@@ -240,7 +347,16 @@ export default function Home() {
             Download CV
           </a>
         </div>
+        <div className="contact-cta">
+          <a className="primary-btn" href="mailto:nasrinakter1109@gmail.com">
+            Invite Me to Interview
+          </a>
+        </div>
       </section>
+
+      <footer className="footer-note">
+        <p>Open to software engineering roles focused on backend systems, enterprise platforms, and product development.</p>
+      </footer>
     </main>
   );
 }
