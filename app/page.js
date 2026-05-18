@@ -3,7 +3,7 @@ import Image from "next/image";
 const skillGroups = [
   {
     title: "Backend",
-    items: ["ASP.NET Core", "C#", "Node.js", "NestJS", "REST API", "Microservices"],
+    items: ["ASP.NET Core", "C#", "Node.js", "ExpressJS", "NestJS", "REST API", "Microservices"],
   },
   {
     title: "Frontend",
