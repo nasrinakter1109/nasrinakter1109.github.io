@@ -1,3 +1,11 @@
+export const domainMeta = {
+  payments: { label: "Payments", emoji: "💳", color: "#6366f1" },
+  support: { label: "Support", emoji: "💬", color: "#06b6d4" },
+  health: { label: "Health-Tech", emoji: "🏥", color: "#10b981" },
+  commerce: { label: "Commerce", emoji: "🛒", color: "#f59e0b" },
+  finance: { label: "Finance", emoji: "📊", color: "#8b5cf6" },
+};
+
 export const projectCaseStudies = [
   {
     slug: "paygate",
@@ -5,6 +13,7 @@ export const projectCaseStudies = [
     company: "SOFTIC",
     role: "Software Engineer",
     period: "2025 - Present",
+    domain: "payments",
     summary:
       "A NestJS-based merchant payment gateway backend for provider-driven deposits, withdrawals, invoices, exchanges, payouts, webhooks, balances, currencies, and dashboard operations.",
     hero:
@@ -58,6 +67,7 @@ export const projectCaseStudies = [
     company: "SOFTIC",
     role: "Software Engineer",
     period: "2025 - Present",
+    domain: "support",
     summary:
       "A multi-tenant support and chatbot platform built with a Next.js frontend for real-time chats, widget flows, admin operations, and multi-channel support management.",
     hero:
@@ -101,6 +111,7 @@ export const projectCaseStudies = [
     company: "Zaynax Limited",
     role: "Software Engineer",
     period: "2021 - 2025",
+    domain: "health",
     summary:
       "A health-tech product involving product, order, payment, and communication services including chat and video call capabilities.",
     hero:
@@ -142,6 +153,7 @@ export const projectCaseStudies = [
     company: "Zaynax Limited",
     role: "Software Engineer",
     period: "2021 - 2025",
+    domain: "commerce",
     summary:
       "An e-commerce and logistics platform with order flow, payment integration, and notification-driven customer operations.",
     hero:
@@ -183,6 +195,7 @@ export const projectCaseStudies = [
     company: "Personal / Portfolio Project",
     role: "Full-Stack Developer",
     period: "Independent Project",
+    domain: "finance",
     summary:
       "A full-stack accounting system with Angular frontend, backend services, SQL scripts, and reporting support for ledgers, account groups, invoices, journals, banks, and financial reports.",
     hero:

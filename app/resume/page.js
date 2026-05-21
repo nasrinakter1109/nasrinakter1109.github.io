@@ -1,3 +1,7 @@
+import ScrollReveal from "../ScrollReveal";
+import MagneticButton from "../MagneticButton";
+import PDFViewer from "../PDFViewer";
+
 export const metadata = {
   title: "Nasrin Akter | Resume",
   description: "View the resume of Nasrin Akter directly in the browser.",
@@ -6,33 +10,31 @@ export const metadata = {
 export default function ResumePage() {
   return (
     <main className="resume-page-shell">
-      <section className="resume-header-card">
+      <ScrollReveal />
+
+      <section className="resume-header-card fade-up" data-reveal style={{ "--delay": "120ms" }}>
         <div>
           <p className="section-tag">Resume</p>
           <h1>Nasrin Akter CV</h1>
           <p className="resume-lead">
-            You can view the resume directly here in the browser, or download a copy if needed.
+            View my resume below, or download a copy.
           </p>
         </div>
         <div className="resume-actions">
-          <a className="primary-btn" href="/Nasrin_Akter_Resume.pdf" target="_blank" rel="noreferrer">
-            Open PDF
-          </a>
-          <a className="secondary-btn" href="/Nasrin_Akter_Resume.pdf" download>
+          <MagneticButton className="secondary-btn" href="/Nasrin_Akter_Resume.pdf" target="_blank" rel="noreferrer">
+            Open in new tab
+          </MagneticButton>
+          <MagneticButton className="secondary-btn" href="/Nasrin_Akter_Resume.pdf" download>
             Download CV
-          </a>
-          <a className="secondary-btn" href="/">
+          </MagneticButton>
+          <MagneticButton className="secondary-btn" href="/">
             Back to Portfolio
-          </a>
+          </MagneticButton>
         </div>
       </section>
 
-      <section className="resume-viewer-card">
-        <iframe
-          title="Nasrin Akter Resume"
-          src="/Nasrin_Akter_Resume.pdf#view=FitH"
-          className="resume-frame"
-        />
+      <section className="resume-viewer-card fade-up" data-reveal style={{ "--delay": "200ms" }}>
+        <PDFViewer url="/Nasrin_Akter_Resume.pdf" />
       </section>
     </main>
   );
